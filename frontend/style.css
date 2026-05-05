@@ -1,0 +1,36 @@
+body {
+  background: radial-gradient(circle at top, #0b0f1a, #05070f);
+  color: white;
+  font-family: Inter, sans-serif;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 100px;
+}
+
+input {
+  width: 350px;
+  padding: 12px;
+  margin: 10px;
+  background: #111827;
+  border: none;
+  border-radius: 8px;
+  color: white;
+}
+
+button {
+  background: #6366f1;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+}
+
+#output {
+  margin-top: 40px;
+  width: 60%;
+}
