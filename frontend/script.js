@@ -1,14 +1,27 @@
+
+if (!query || !product) {
+  document.getElementById("output").innerHTML = "<p style='color:red'>Please fill in both fields.</p>";
+  return;
+}
+
 async function analyze() {
+  document.getElementById("output").innerHTML = "<p>Analyzing... ⏳</p>";
   const query = document.getElementById("query").value;
   const product = document.getElementById("product").value;
 
   let html = "<h2>AI Visibility Report</h2>";
 
-  const res = await fetch("/analyze", {
+  try {
+  const res = await fetch(window.location.origin + "/analyze", {
     method: "POST",
     headers: {"Content-Type": "application/json"},
     body: JSON.stringify({ query, product_name: product })
   });
+  const data = await res.json();
+  // your existing code...
+} catch (err) {
+  document.getElementById("output").innerHTML = "<p style='color:red'>Something went wrong. Please try again.</p>";
+}
 
   const data = await res.json();
 

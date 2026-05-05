@@ -36,7 +36,8 @@ def analyze():
 
     try:
         gpt_raw = query_openai(query)
-    except:
+    except Exception as e:
+        print(f"OpenAI error: {e}")
         gpt_raw = ""
 
     try:
